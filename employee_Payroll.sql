@@ -38,3 +38,25 @@ select *  from employee_payroll
 UPDATE employee_payroll set gender = 'M' where name = 'Bill' or name = 'Charli';
 UPDATE employee_payroll SET gender = 'F' WHERE name='Terisa';
 UPDATE employee_payroll SET salary=300000 WHERE name='Terisa';
+
+--UC7(Grouping and aggregate operations) 
+SELECT COUNT(salary) FROM employee_payroll GROUP BY gender;
+SELECT SUM(salary) FROM employee_payroll GROUP BY gender;
+SELECT AVG(salary) FROM employee_payroll GROUP BY gender;
+SELECT MAX(salary) FROM employee_payroll GROUP BY gender;
+SELECT MIN(salary) FROM employee_payroll GROUP BY gender;
+
+ SELECT SUM(salary) FROM employee_payroll
+WHERE gender = 'F' GROUP BY gender;
+
+ SELECT AVG(salary) FROM employee_payroll
+WHERE gender = 'F' GROUP BY gender;
+
+SELECT MIN(salary) FROM employee_payroll
+WHERE gender = 'F' GROUP BY gender;
+
+SELECT MAX(salary) FROM employee_payroll
+WHERE gender = 'F' GROUP BY gender;
+
+SELECT COUNT(salary) FROM employee_payroll
+WHERE gender = 'F' GROUP BY gender;
