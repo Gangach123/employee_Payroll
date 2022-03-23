@@ -19,3 +19,12 @@ Insert into employee_payroll values('Bill',100000.00,'2018-01-01'),
 
 --UC4 SHOWS ALL DATA IN THE TABLE
 select * from employee_payroll
+
+--UC5 RETRIVING DATA FROM TABLE
+select salary from employee_payroll
+where name = 'Bill';
+
+select name from employee_payroll
+
+SELECT * FROM employee_payroll
+WHERE startDate BETWEEN CAST('2018-01-01' AS DATE) AND GETDATE()
