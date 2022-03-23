@@ -28,3 +28,13 @@ select name from employee_payroll
 
 SELECT * FROM employee_payroll
 WHERE startDate BETWEEN CAST('2018-01-01' AS DATE) AND GETDATE()
+
+
+--UC6 (Ability to add Gender to Employee & UPDATING)
+alter table employee_payroll add gender varchar(1);
+
+select *  from employee_payroll
+
+UPDATE employee_payroll set gender = 'M' where name = 'Bill' or name = 'Charli';
+UPDATE employee_payroll SET gender = 'F' WHERE name='Terisa';
+UPDATE employee_payroll SET salary=300000 WHERE name='Terisa';
