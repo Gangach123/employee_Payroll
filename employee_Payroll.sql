@@ -60,3 +60,14 @@ WHERE gender = 'F' GROUP BY gender;
 
 SELECT COUNT(salary) FROM employee_payroll
 WHERE gender = 'F' GROUP BY gender;
+
+--UC8 (extend employee_payroll data to store employee information) 
+select *  from employee_payroll
+alter table employee_payroll add Phone_Number varchar(250);
+alter table employee_payroll drop column Phone_Number;
+alter table employee_payroll add Address varchar(250);
+alter table employee_payroll drop column Address;
+alter table employee_payroll add Department varchar(150) Default 'HR' NOT NULL;
+UPDATE employee_payroll SET Department='HR' WHERE Department='GANGA';
+alter table employee_payroll add address varchar(250) NOT NULL default'TBD';
+--ALTER TABLE employee_payroll ALTER Address SET DEFAULT 'TBD';
