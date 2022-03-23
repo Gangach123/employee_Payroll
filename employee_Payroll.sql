@@ -16,3 +16,6 @@ create table employee_payroll
 Insert into employee_payroll values('Bill',100000.00,'2018-01-01'),
 ('Terisa',200000.00,'2019-11-11'),
 ('Charli',100000.00,'2021-05-21')
+
+--UC4 SHOWS ALL DATA IN THE TABLE
+select * from employee_payroll
