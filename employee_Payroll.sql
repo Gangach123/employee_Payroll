@@ -71,3 +71,22 @@ alter table employee_payroll add Department varchar(150) Default 'HR' NOT NULL;
 UPDATE employee_payroll SET Department='HR' WHERE Department='GANGA';
 alter table employee_payroll add address varchar(250) NOT NULL default'TBD';
 --ALTER TABLE employee_payroll ALTER Address SET DEFAULT 'TBD';
+
+
+--UC9
+--alter table employee_payroll rename column salary to Basic_Pay;
+--ALTER TABLE employee_payroll CHANGE COLUMN salary TO Basic_Pay;
+sp_rename 'employee_payroll.salary', 'Basic_Pay', 'COLUMN';
+alter table employee_payroll add Deductions float;
+
+alter table employee_payroll drop column Deductions;
+alter table employee_payroll add Taxable_Pay float NOT NULL Default 0.0 ;
+alter table employee_payroll add Deduction float NOT NULL Default 0.0 ;
+
+alter table employee_payroll add Tax Double NOT NULL after ;
+alter table employee_payroll add Net_Pay float NOT NULL Default 0.0 ;
+Alter table employee_payroll add Addres varchar(250) not null default 'Vijayawada';
+alter table employee_payroll drop column addres;
+ALTER TABLE employee_payroll ADD Income_Tax FLOAT NOT NULL DEFAULT 0.00;
+UPDATE employee_payroll SET Net_Pay = (Basic_Pay - Deduction - Taxable_Pay - Income_Tax);
+select *  from employee_payroll
