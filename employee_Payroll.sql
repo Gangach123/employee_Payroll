@@ -90,3 +90,7 @@ alter table employee_payroll drop column addres;
 ALTER TABLE employee_payroll ADD Income_Tax FLOAT NOT NULL DEFAULT 0.00;
 UPDATE employee_payroll SET Net_Pay = (Basic_Pay - Deduction - Taxable_Pay - Income_Tax);
 select *  from employee_payroll
+
+--UC10
+UPDATE employee_payroll SET Department = 'Sales' WHERE name = 'Terisa';
+INSERT INTO employee_payroll VALUES ('Terisa',2000000,'2022-03-21','F',NULL,'Marketing','INDIA',0.00,0.00,2000000,0.00)
